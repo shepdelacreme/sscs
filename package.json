@@ -4,8 +4,13 @@
   "description": "Super Simple CPU Simulator",
   "main": "index.js",
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/polyfill": "^7.6.0",
+    "@babel/preset-env": "^7.6.3",
     "@optoolco/components": "^6.2.3",
     "@optoolco/tonic": "^10.0.4",
+    "babel-loader": "^8.0.6",
+    "core-js": "^3.3.6",
     "debug": "^4.1.1",
     "qs": "github:heapwolf/qs"
   },
@@ -27,7 +32,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "npm run watch:stylus & webpack -w --mode development & ./bin/server.js",
-    "watch:stylus": "stylus --watch ./src/index.styl -o ./static/css/index.css"
+    "watch:stylus": "stylus --watch ./src/index.styl -o ./static/css/index.css",
+    "build": "NODE_ENV=production webpack --mode production && npm run build:stylus",
+    "build:stylus": "stylus ./src/index.styl -o ./static/css/index.css"
   },
   "author": "Daniel Shepherd",
   "license": "MIT",

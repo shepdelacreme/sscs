@@ -1,9 +1,11 @@
 const webpack = require('webpack')
 const CompressionPlugin = require('compression-webpack-plugin')
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserPlugin = require('terser-webpack-plugin')
 const pkg = require('./package.json')
 
 const entry = [
+  '@babel/polyfill',
   './src/index.js'
 ]
 
@@ -38,16 +40,30 @@ const rules = [
   {
     test: /src\/(.*)\.json$/,
     loader: 'json-loader'
+  },
+  {
+    test: /\.js$/,
+    exclude: /node_modules/,
+    loader: require.resolve('babel-loader'),
+    query: {
+      presets: [
+        ['@babel/preset-env', {
+          exclude: ['transform-classes'],
+          useBuiltIns: 'entry'
+        }]
+      ]
+    }
   }
 ]
 
 if (process.env.NODE_ENV === 'production') {
   optimization.minimizer = [
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        keep_fnames: true
+    new TerserPlugin({
+      terserOptions: {
+        keep_fnames: true,
+        keep_classnames: true,
+        mangle: false
       },
-      extractComments: true,
       parallel: true
     })
   ]
