@@ -1,0 +1,122 @@
+@require './functions.styl'
+
+//
+// Non page specific styles (global)
+//
+body
+  text-rendering optimizeLegibility
+  -webkit-font-smoothing antialiased
+  -moz-osx-font-smoothing grayscale
+  -moz-font-smoothing antialiased
+  font-smoothing antialiased
+  -webkit-font-feature-settings "kern"
+  font-feature-settings "kern"
+  -webkit-font-variant-ligatures common-ligatures
+  font-variant-ligatures common-ligatures
+  -webkit-font-kerning normal
+  font-kerning normal
+  font-weight normal
+  color var(--tonic-primary)
+  font-family var(--tonic-body)
+  margin 0
+  background-color var(--tonic-window)
+  overflow hidden
+
+p
+  font 16px/22px var(--tonic-body)
+
+h1,
+h2,
+h3,
+h4,
+h5
+  font-weight normal
+  margin 20px 0
+  flex-basis 100%
+
+h1
+  font 18px/24px var(--tonic-header)
+
+h2
+  font 14px/16px var(--tonic-subheader)
+  text-transform uppercase
+  letter-spacing 1.5px
+  padding-top 10px
+  padding-bottom 10px
+
+h3
+  font 11px/16px var(--tonic-subheader)
+  text-transform uppercase
+  letter-spacing 0.5px
+
+h4
+  font 400 14px/16px var(--tonic-subheader)
+  text-transform uppercase
+  letter-spacing 1.5px
+
+a
+  color var(--tonic-accent)
+  text-decoration none
+  transition color 0.2s ease-in-out, border 0.2s ease-in-out
+  type="warning"
+
+  &:visited
+    color var(--tonic-accent)
+
+  &:hover
+    color var(--tonic-button-dark)
+
+.flex
+  display flex
+
+.breadcrumb
+  cursor pointer
+
+// Component Styles
+
+tonic-input input
+  border-radius 2px
+  background-color #fff
+
+tonic-tabs
+  text-align left
+  display inline-block
+
+  .tonic--tab
+    color var(--tonic-accent)
+    font 14px var(--tonic-subheader)
+
+  a
+    color var(--tonic-accent)
+    text-transform uppercase
+    letter-spacing 1px
+    margin-right 16px
+    border-bottom 1px solid transparent
+    cursor pointer
+    NoSelect()
+
+    &[aria-selected="true"]
+      color var(--tonic-accent)
+      border-bottom 1px solid var(--tonic-accent) !important
+
+tonic-tab-panel
+  padding-top 15px
+  margin-top 15px
+  border-top 1px solid var(--tonic-border)
+
+tonic-textarea
+  display inherit
+  margin 8px 0
+
+tonic-textarea textarea
+  background-color var(--tonic-background-light)
+
+tonic-button[disabled="true"]
+  pointer-events none
+
+tonic-button
+  button
+    NoSelect()
+
+    &[disabled]
+      color #666

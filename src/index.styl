@@ -1,0 +1,39 @@
+@require './styles/*.styl'
+@require './components/**/*'
+
+.app-wrapper
+  Absolute(0, 0, 0, 0)
+  padding 25px
+  display block
+  overflow scroll
+  overflow-x hidden
+  margin 0 auto
+  max-width 1600px
+
+section.app-wrapper > header
+  display flex
+  align-items: center
+
+section.app-wrapper > header h1
+  font-weight: 400
+  font-size: 28px
+
+section.app-wrapper main div.row
+  display: flex
+  column-count: 3
+
+section.app-wrapper main div.row code-editor
+  width: 480px
+  margin-right: 10px
+
+section.app-wrapper main div.row register-display
+  width: 180px
+  margin-right: 10px
+  display: block
+
+section.app-wrapper main div.row memory-display
+  width: auto
+  margin-right: 10px
+
+// section.app-wrapper > main
+//   background-color #f8f8f8

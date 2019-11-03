@@ -1,0 +1,76 @@
+.data-table
+  height 500px
+  width 100%
+  display inline-block
+  position relative
+  background #fff
+  border 1px solid #eaeaea
+
+  .error,
+  .loading
+    display none
+
+    &.show
+      display block
+
+  .loading:after
+    content 'Loading...'
+
+  .empty
+    height 100%
+    display flex
+    align-items center
+    justify-content center
+    flex-direction column
+
+  .empty > *
+    max-width 50%
+
+  .empty p
+    font 20px var(--tonic-body)
+
+  .external-link
+    margin-left 5px
+    display inline-block
+    vertical-align middle
+
+  .tr
+    display flex
+    &:hover
+      background-color #f5f5f5
+      cursor default
+
+  .th
+    display flex
+    border-bottom 1px solid var(--tonic-border)
+
+    .td
+      color var(--tonic-medium)
+      font normal 11px var(--tonic-subheader)
+      text-transform uppercase
+      letter-spacing 1px
+      padding 12px
+      &:first-of-type
+        text-align left
+        flex-basis 400px
+
+      span
+        color black
+        font 11px var(--tonic-header)
+        padding 1px 6px
+        margin-left 6px
+        display inline-block
+        background-color var(--tonic-background)
+        border-radius 5px
+
+  .td
+    font normal 14px var(--tonic-body)
+    text-align center
+    flex-basis 200px
+    padding 6px 12px
+    Ellipsis()
+
+  .tr .td:first-of-type
+    font normal 14px var(--tonic-subheader)
+    text-align left
+    flex-basis 400px

@@ -1,0 +1,28 @@
+NoSelect()
+  -webkit-touch-callout none
+  -webkit-user-select none
+  -khtml-user-select none
+  -moz-user-select none
+  -ms-user-select none
+  user-select none
+
+Absolute(Top = 0, Right = 0, Bottom = 0, Left = 0)
+  position absolute
+  top Top
+  right Right
+  bottom Bottom
+  left Left
+
+CenterXY()
+  position absolute
+  top 50%
+  left 50%
+  -webkit-transform translateX(-50%) translateY(-50%)
+  -ms-transform translateX(-50%) translateY(-50%)
+  transform translateX(-50%) translateY(-50%)
+
+Ellipsis()
+  position relative
+  text-overflow ellipsis
+  white-space nowrap
+  overflow hidden

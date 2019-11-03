@@ -1,0 +1,19 @@
+*.env
+**.swp
+.DS_Store
+._*
+*.swp
+*.swo
+*~
+bin/pid
+
+# Webpack
+webpack-stats.*
+
+# Node
+# dependencies
+./.node_modules
+node_modules
+
+# VSCode
+.vscode
