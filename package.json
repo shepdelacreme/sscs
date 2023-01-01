@@ -9,7 +9,7 @@
     "@babel/preset-env": "^7.6.3",
     "@optoolco/components": "^6.2.3",
     "@optoolco/tonic": "^10.0.4",
-    "babel-loader": "^8.0.6",
+    "babel-loader": "^8.3.0",
     "core-js": "^3.3.6",
     "debug": "^4.1.1",
     "qs": "github:heapwolf/qs"
@@ -26,8 +26,8 @@
     "standard": "^14.3.1",
     "stylus": "^0.54.7",
     "uglifyjs-webpack-plugin": "^2.2.0",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
